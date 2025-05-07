@@ -9,7 +9,7 @@ pipeline {
                         sh '''
                             export DOCKER_HOST=tcp://172.17.0.6:2375
                             docker login -u $USERNAME -p $PASSWORD
-                            docker push meilecor/node-web-app
+                            docker buildx build --platform linux/amd64 -t meilecor/node-web-app:latest . --push
                         '''
                     }
                 }
