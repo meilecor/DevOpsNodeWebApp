@@ -1,6 +1,6 @@
 # docker build -t meilecor/node-web-app .
 
-FROM node:22.15.0
+FROM --platform=linux/amd64 node:22.15.0
 
 # Create app directory
 WORKDIR /usr/src/app
